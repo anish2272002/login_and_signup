@@ -23,9 +23,9 @@ import os
 SECRET_KEY = os.environ.get('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://anishauth.herokuapp.com']
 
 
 # Application definition
@@ -133,6 +133,8 @@ STATIC_ROOT = Path.joinpath(BASE_DIR,'staticfiles')
 # Media files
 MEDIA_URL = 'media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR,'media')
+
+LOGIN_URL = "/login/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
