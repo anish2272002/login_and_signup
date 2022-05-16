@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'app',
 ]
 
@@ -135,6 +136,17 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR,'media')
 
 LOGIN_URL = "/login"
+
+# AWS configuration
+AWS_ACCESS_KEY_ID = os.environ.get("aws_access_key_id")
+AWS_SECRET_ACCESS_KEY = os.environ.get("aws_secret_access_key")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("aws_storage_bucket_name")
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_S3_ADDRESSING_STYLE = 'virtual'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
