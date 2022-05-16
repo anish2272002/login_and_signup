@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block body %}
+    <div class="cont">
+        <div class="grid-card" style="grid-template-rows:15% 55% 25%;transform:translateY(30px);">
+            <h1>Anish Kumar</h1>
+            <div><img id="img-003" class="img-fluid img-thumbnail" src="{% static 'anish.png' %}" alt="anish_img"/></div>
+            <div class="p-2 row">
+                <div class="col-sm-4 my-1">
+                    <a href="https://www.linkedin.com/in/anish-kumar-4b5771229">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa-brands fa-linkedin"></i>&nbsp;LinkedIn
+                        </button>
+                    </a>
+                </div>
+                <div class="col-sm-4 my-1">
+                    <a href="https://github.com/anish2272002">
+                        <button type="button" class="btn btn-dark">
+                            <i class="fa-brands fa-github"></i>&nbsp;GitHub
+                        </button>
+                    </a>
+                </div>
+                <div class="col-sm-4 my-1">
+                    <a href="https://www.instagram.com/anish__72002/">
+                        <button type="button" class="btn text-white" style="background:#E1306C;">
+                            <i class="fa-brands fa-instagram"></i>&nbsp;Instagram
+                        </button>  
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+    {% block body %}
+    <div class="container bg-light p-3" style="position:relative;top:80px;left:0px;">
+        {% if err %}
+        <p><div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error occured!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div></p>
+        {% else %}
+        <p><div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>Enter data.</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div></p>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{user_form.as_p}}
+            {{user_profile_form.as_p}}
+            <p><input type="Submit" class="btn btn-primary" value="Register"/></p>
+        </form>
+    </div>
+    {% endblock %}

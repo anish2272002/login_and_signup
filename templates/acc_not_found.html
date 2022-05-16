@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block body %}
+    <div class="cont rounded bg-light rounded">
+        <div class="grid-card bg-white p-2" style="grid-template-rows:50% 35% 15%">
+            <div><img class="rounded" src="{% static 'audit.png' %}" alt="Not-found-img" id="img-001"/></div>
+            <h1>Account Not Found or is Inactive</h1>
+            <div><a href="{% url 'app:index' %}"><button class="btn btn-primary btn-lg rounded">Home</button></a></div>
+        </div>
+    </div>
+    {% endblock %}

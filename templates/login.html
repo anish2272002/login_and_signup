@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block body %}
+    <div class="cont rounded bg-light">
+        <div class="grid-card bg-white p-2" style="grid-template-rows:50% 50%;transform:translateY(30px);">
+            <div><img class="rounded-circle" src="{% static 'img6Q.png' %}" alt="Login-img" id="img-001"/></div>
+            <form method="POST">
+                {% csrf_token %}
+                <p><input type="text" name="username" class="form-control" placeholder="Username"/></p>
+                <p><input type="password" name="password" class="form-control" placeholder="Password"/></p>
+                <p><input class="bt btn-success" type="submit" value="Login"></p>
+            </form>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <div class="cont bg-light">
+        {% if user.is_authenticated %}
+            <div class="grid-card" style="grid-template-rows:20% 65% 15%">
+                <div><h3>Welcome</h3><h3>{{user.first_name}} {{user.last_name}}</h3></div>
+                <div><img id="img-002" class="img-fluid img-thumbnail rounded m-3" src="{{pic.url}}" alt="Login_img"/></div>
+                <div><h3>{{user.username}}</h3><h3>{{user.email}}</h3></div>
+            </div>
+        {% else %}
+        <div class="grid-card" style="transform:translateY(30px);">
+            <h1>Welcome</h1>
+            <div><img id="img-001" src="{% static 'login.png' %}" alt="Login_img"/></div>
+            <h4>This is a Authentication system developed for login and signup.</h3-4>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
